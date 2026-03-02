@@ -1,4 +1,4 @@
-name: Update Shiki data
+name: Update_Shiki_data
 
 on:
   workflow_dispatch:
