@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shiki Dashboard</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="wrap">
+    <div class="title">
+      <h1>Shiki Dashboard</h1>
+      <p id="subtitle" class="muted">Загрузка…</p>
+    </div>
+    <div class="actions">
+      <button id="refreshBtn">Обновить данные</button>
+      <a class="link" href="./data/latest.json" target="_blank" rel="noreferrer">JSON</a>
+    </div>
+  </header>
+
+  <main class="wrap grid">
+    <section class="cards" id="cards"></section>
+
+    <section class="panel">
+      <h2>Статусы</h2>
+      <canvas id="chartStatuses"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Оценки</h2>
+      <canvas id="chartScores"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Топ жанров (completed)</h2>
+      <canvas id="chartGenres"></canvas>
+    </section>
+
+    <section class="panel">
+      <h2>Топ студий (completed)</h2>
+      <canvas id="chartStudios"></canvas>
+    </section>
+
+    <section class="panel wide">
+      <h2>Completed по годам (по updatedAt — приблизительно)</h2>
+      <canvas id="chartByYear"></canvas>
+    </section>
+
+    <section class="panel wide">
+      <h2>Топ-20 по твоей оценке (completed)</h2>
+      <div class="tableWrap">
+        <table id="topTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Тайтл</th>
+              <th>Оценка</th>
+              <th>Жанры</th>
+              <th>Студии</th>
+              <th>Год</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap muted">
+    <small>Данные обновляются GitHub Actions. Соблюдай лимиты API и укажи User-Agent. </small>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
